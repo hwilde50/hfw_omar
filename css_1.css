@@ -1,0 +1,256 @@
+:root {
+    --page-background: #F2F2F2;
+    --general-text: black;
+
+    --header-background-title: #76A7FA;
+    --header-text: white;
+    --modal-title: #4285F4;
+
+    --btn-title: #4285F4;
+    --btn-add: #4285F4;
+    --btn-left-right: #0F9D58;
+    --btn-delete: #DB4437;
+    --btn-cancel: #F4B400;
+    --btn-save: #0F9D58;
+    --btn-text: white;
+
+    --form-body-background: white;
+    --form-txt-left-right:#e9fdf3;
+    --form-txt-background: #E7E6DD;
+    --form-txt-content: black;
+    --form-corner-radius: 5px;
+    --form-control-height: 2rem;
+    --form-label-weight: bold;
+
+    --note-header: #E7E6DD;
+    --grid-cell: #ececec;
+
+    --font-size-2: .5rem;
+    --font-size-3: .8rem;
+    --font-size-4: 1rem;
+    --font-size-5: 1.3rem;
+    --font-size-6: 1.4rem;
+    --font-size-7: 1.6rem;
+}
+
+body {
+    background-color: var(--page-background);
+    color: var(--general-text);
+    font-family: Ubuntu, Helvetica, Verdana, Arial, sans-serif;
+    font-size: 1rem;
+}
+
+/* menu ---------------------------------- */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    margin-left: 20%;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.side-menu a:hover {
+    color: #f1f1f1;
+}
+.side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+  
+@media screen and (max-height: 450px) {
+    .side-menu {padding-top: 15px;}
+    .side-menu a {font-size: 18px;}
+}
+
+/* Page container ---------------------------------- */
+.page-container {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Page title ---------------------------------- */
+.page-title {
+    display: grid;
+    align-items: center; /* Vertical alignment */
+    grid-auto-rows: 41px;
+    grid-template-columns: minmax(30px, 41px) minmax(4rem, 1fr) minmax(30px, 41px);
+    margin-bottom: 10px;
+}
+
+/* Header ---------------------------------- */
+.title-btn {
+    background-color: var(--btn-title);
+    border-style: none;
+    color: var(--btn-text);
+    cursor: pointer;
+    font-size: var(--font-size-5);
+    padding: 9px;
+    text-align: center;
+}
+.title-btn-menu {
+    border-bottom-left-radius: var(--form-corner-radius);
+    border-top-left-radius: var(--form-corner-radius);
+}
+.title-text {
+    background-color: var(--header-background-title);
+    border-style: none;
+    color: var(--header-text);
+    font-size: var(--font-size-5);
+    font-weight: bold;
+    padding: 9px;
+}
+.title-btn-add {
+    border-bottom-right-radius:  var(--form-corner-radius);
+    border-top-right-radius:  var(--form-corner-radius);
+}
+
+/* Buttons ------------------------------------------- */
+.btn {
+    border-radius: var(--form-corner-radius);
+    border-style: none;
+    color: white;
+    font-size: var(--font-size-4);
+    width: 5rem;
+    height: 38px;
+}
+.btn-cancel {
+    background-color: var(--btn-cancel);
+}
+.btn-save {
+    background-color: var(--btn-save);
+}
+
+/* Form -------------------------------- */
+.form-label {
+    align-self: end;
+    font-size: var(--font-size-4);
+    font-weight: var(--form-label-weight);
+    margin-bottom: 0px;
+    text-align: left;
+}
+.form-control-text {
+    background-color: var(--form-txt-background);
+    border-style: none;
+    color: var(--form-txt-content);
+    font-size: var(--font-size-4);
+    height: 38px;
+    text-align: left;
+}
+
+/* Left/right controls-------------------------------- */
+.btn-left-right {
+    background-color: var(--btn-left-right);
+    border-style: none;
+    color: var(--btn-text);
+    cursor: pointer;
+    font-size: var(--font-size-5);
+    height: 38px;
+    text-align: center;
+}
+.btn-left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.btn-right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.left-right-text {
+    text-align: center;
+}
+
+/* Month_selected ---------------------------------- */
+.page-month-controls {
+    display: grid;
+    grid-auto-rows: 38px;
+    grid-template-columns: minmax(30px, 41px) minmax(2rem, 1fr) minmax(30px, 41px);;
+    margin-bottom: 20px;
+    margin-right: 50%;
+}
+
+/* Modal ---------------------------------- */
+.modal-container {
+    display: none;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 1rem;
+    text-align: center;
+}
+.modal-title-text {
+    background-color: var(--modal-title);
+    border-bottom-left-radius: var(--form-corner-radius);
+    border-style: none;
+    border-top-left-radius: var(--form-corner-radius);
+    color: var(--header-text);
+    font-size: var(--font-size-5);
+    font-weight: bold;
+    padding: 9px;
+    text-align: center;
+}
+
+/* Modal Header ----------------------------------- */
+.modal-header-grid {
+    display: grid;
+    background-color: var(--modal-title);
+    border-bottom-left-radius: var(--form-corner-radius);
+    border-bottom-right-radius:  var(--form-corner-radius);
+    border-top-left-radius: var(--form-corner-radius);
+    border-top-right-radius:  var(--form-corner-radius);
+    font-size: var(--font-size-5);
+    grid-template-columns: 1fr minmax(30px, 41px);
+    grid-auto-rows: 41px;
+    justify-self:center  /* Horizontal alignment */
+}
+.modal-btn-close {
+    align-self: center;
+    justify-self: center;
+}
+/* Notes --------------------------------------------- */
+.notes-grid {
+    display: grid;
+    border-bottom-left-radius: var(--form-corner-radius);
+    border-bottom-right-radius:  var(--form-corner-radius);
+    border-top-left-radius: var(--form-corner-radius);
+    border-top-right-radius:  var(--form-corner-radius);
+    font-size: var(--font-size-5);
+    grid-template-columns: 100%;
+    grid-auto-rows: 38px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    justify-items: start;
+}
+.notes-header {
+    background-color: var(--form-txt-background);
+}
+.note-header-icon {
+    font-size: var(--font-size-3);
+    width: 1.5rem;
+}
+.note-header-text {
+    color: var(--form-txt-content);
+    font-size: var(--font-size-4);
+    margin-left: .5rem;
+}
+.notes-body {
+    font-size: var(--font-size-4);
+    margin-left: 2rem;
+    margin-bottom: 10px;
+}

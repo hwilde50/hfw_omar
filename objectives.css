@@ -1,0 +1,76 @@
+/******************************/
+/* Objectives*/
+/******************************/
+
+/* Data grid ---------------------------------- */
+.page-data-grid {
+    display: grid;
+    grid-template-columns: 5% 77% 18%;
+    grid-auto-rows: 38px;
+    margin-top: 20px;
+}
+.page-grid-cell {
+    background-color: var(--form-txt-background);
+    border: 1px solid white;
+    color: black;
+    font-size: var(--font-size-4);
+    padding: .5rem;
+    text-align: left;
+}
+.col-heading {
+    font-weight: bold;
+}
+.edit-icon {
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Modal ------------------------------------------- */
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: center;    /* Vertical alignment */
+    justify-self: center;  /* Horizontal alignment */
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Body ----------------------------------- */
+.modal-body-grid {
+    display: grid;
+    border-bottom-left-radius: var(--form-corner-radius);
+    border-bottom-right-radius:  var(--form-corner-radius);
+    border-top-left-radius: var(--form-corner-radius);
+    border-top-right-radius:  var(--form-corner-radius);
+    font-size: var(--font-size-5);
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(5, 38px);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.col-1-3 {
+    grid-column: 1/ span 2;
+}
+.left-right-controls {
+    display: grid;
+    grid-template-columns: minmax(38px, 41px) minmax(4rem, 1fr) minmax(38px, 41px);
+    grid-template-rows: 2rem;
+}
+.left-controls {
+    margin-right: .5rem;
+}
+.right-controls {
+    margin-left: .5rem;
+}
+.modal-btn-group {
+    justify-self: right;
+    margin-top: 38px;
+}
+

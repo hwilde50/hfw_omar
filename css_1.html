@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="{{url_for('static', filename='js/misc_functions.js')}}"></script>
+<script>dayjs().format()</script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/objectives.css')}}">
+<script src="{{url_for('static', filename='js/misc_functions.js')}}"></script>
+<script src="{{url_for('static', filename='js/objectives.js')}}"></script>
+
+<title>css_1</title>
+</head>
+<body>
+
+<input type="hidden" id="txt_hidden_objective_id" value="">
+
+<div id="div_side_menu" class="side-menu"></div>
+
+<div class="page-container">
+    <div class="page-title">
+        <!-- Page title formated as menu button, title, and add button ---------->
+        <button type="button" class="title-btn title-btn-menu " id="title_btn_menu">
+            <i class="fa fa-bars"></i>
+        </button>
+        
+        <div class="title-text">Objectives</div>
+        <button type="button" class="title-btn title-btn-add" id="title_btn_add">
+            <i class="fa fa-plus icon-plus"></i>
+        </button>
+    </div>
+
+    <div class="page-month-controls">
+        <!-- Left/right control formated at minus, value, plus ------------->
+        <button type="button" class="btn-left-right btn-left" id="btn_month_minus">
+            <i class="fa fa-arrow-left"></i>
+        </button>
+        <input type="text" class="form-control-text left-right-text" id="month_selected" readonly>
+        <button type="button" class="btn-left-right btn-right" id="btn_month_plus">
+            <i class="fa fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <hr>
+
+    <!-- List of objectives ---------------------------->
+    <div class="page-data-grid" id="div_objective_list"></div>
+</div>
+
+<!-- Modal ----------------------------------------->
+<div class="modal-container" id="modal_add_edit">
+
+    <!-- Title bar ---------->
+    <div class="modal-header-grid">
+        <div class="modal-title-text" id="div_modal_title"></div>
+        <div class="close">&times;</div>
+    </div>
+
+    <!-- Modal body grid---------->
+    <div class="modal-body-grid">
+
+        <!-- Description label and field ---------->
+        <div class="form-label col-1-3">Description:</div>
+        <input type="text" class="form-control-text col-1-3" id="txt_modal_description">
+
+        <!-- Labels for left/right controls ---------->
+        <div class="form-label left-controls">Date Due:</div>
+        <div class="form-label right-controls">Status:</div>
+
+        <!-- Left side of left/right controls grid ---------->
+        <div class="left-right-controls left-controls">
+            <button type="button" class="btn-left-right btn-left" id="btn_date_due_minus">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <input type="text" class="form-control-text left-right-text" id="txt_modal_date_due" readonly>
+            <button type="button" class="btn-left-right btn-right" id="btn_date_due_plus">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- Right side of left/right controls grid ---------->
+        <div class="left-right-controls right-controls">
+            <button type="button" class="btn-left-right btn-left" id="btn_status_previous">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <input type="text" class="form-control-text left-right-text" id="txt_modal_status" readonly>
+            <button type="button" class="btn-left-right btn-right" id="btn_status_next">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- New note label and field ---------->
+        <div class="form-label col-1-3" id="lbl_modal_new_note">New Note:</div>
+        <textarea rows="3" class="form-control-text col-1-3" id="txt_modal_new_note"></textarea>
+       
+        <!-- Buttons - Note+, Cancel, Save ---------->
+        <div class="col-1-3 modal-btn-group">
+            <button type="button" class="btn btn-cancel" id="btn_modal_cancel">Cancel</button>
+            <button type="button" class="btn btn-save" id="btn_modal_save">Save</button>
+        </div>
+    </div>
+
+    <!-- List of objective notes, if any---------->
+    <div class="col-1-3 notes-grid" id="div_modal_objective_notes"></div>
+
+</div>
+</body>
+</html>
